@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <h2>Login</h2>
+
+        <form method="POST">
+            <input type="email" name="email" placeholder="Enter Email" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Yahi shift karna tha -->
+        <p class="auth-link">
+            Don't have account? <a href="/register">Register</a>
+        </p>
+
+    </div>
+</div>
+
+{% endblock %}

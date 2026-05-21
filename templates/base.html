@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake URL Detector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🔐 Fake URL Detector</div>
+
+    {% if current_user.is_authenticated %}
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+    {% endif %}
+</nav>
+
+<div class="main-container">
+    <div class="content-wrapper">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+</body>
+</html>

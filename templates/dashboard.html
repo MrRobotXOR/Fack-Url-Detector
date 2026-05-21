@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+<h2>Scan URL</h2>
+<h2>🤖 AI Security Assistant</h2>
+
+{% if explanation %}
+<p>{{ explanation }}</p>
+{% endif %}
+
+<div class="scan-layout">
+
+<div class="scan-left">
+
+<form method="POST">
+<input type="text" name="url" placeholder="Enter URL to scan..." required>
+<button type="submit">Scan</button>
+</form>
+
+{% if result %}
+<h3 class="{{ 'fake' if result == 'Fake' else 'safe' }}">
+Result: {{ result }} ({{ confidence }}%)
+</h3>
+{% endif %}
+
+</div>
+
+
+{% if ip_info %}
+<div class="scan-right">
+
+<h3>🌍 Server Location</h3>
+
+<p><b>IP:</b> {{ ip_info.ip }}</p>
+<p><b>Country:</b> {{ ip_info.country }}</p>
+<p><b>City:</b> {{ ip_info.city }}</p>
+<p><b>ISP:</b> {{ ip_info.isp }}</p>
+
+</div>
+{% endif %}
+
+</div>
+
+</div>
+
+
+<div class="stats-grid">
+
+<div class="stat-box">
+<h3>Total Scans</h3>
+<p>{{ total }}</p>
+</div>
+
+<div class="stat-box">
+<h3>Fake URLs</h3>
+<p>{{ fake }}</p>
+</div>
+
+<div class="stat-box">
+<h3>Safe URLs</h3>
+<p>{{ safe }}</p>
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Recent Activity</h2>
+
+<table>
+
+<tr>
+<th>URL</th>
+<th>Result</th>
+<th>Confidence</th>
+</tr>
+
+{% for item in history %}
+<tr>
+<td>{{ item.url }}</td>
+
+<td class="{{ 'fake' if item.result == 'Fake' else 'safe' }}">
+{{ item.result }}
+</td>
+
+<td>{{ item.confidence }}%</td>
+
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,9 @@
+url,label
+http://google.com,0
+https://github.com,0
+http://paypal-login-security.com,1
+http://192.168.0.1/login,1
+http://facebook.com,0
+http://secure-bank-login-alert.com,1
+http://google.com,Safe
+http://free-money.xyz,Fake
