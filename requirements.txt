@@ -1,5 +1,10 @@
-flask
-gunicorn
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Werkzeug
+joblib
 scikit-learn
-pandas
 numpy
+pandas
+requests
+gunicorn
