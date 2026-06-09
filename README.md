@@ -10,8 +10,8 @@ Fake URL Detector is a web-based tool that helps identify fake and suspicious UR
 ## Important Note
 ⚠️ This project currently works correctly only with URLs that include:
 
-- `http://`
-- `https://`
+ `http://`
+ `https://`
 
 ### Supported URL Format
 ```txt
